@@ -1,6 +1,6 @@
 // Exercise 1
 
-let name, age, city, phone, email, company, message1;
+let name, age, city, phone, email, company;
 
 //name = prompt("Ваше имя", "Vadim");
 //age = prompt("Возраст", "24");
