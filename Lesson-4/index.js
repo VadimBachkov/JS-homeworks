@@ -98,6 +98,17 @@ while (check) {
 
 }
 
+// exercise 10
+
+let arr_10 = [48,9,0,4,21,2,1,0,8,84,76,8,4,13,2];
+
+let sum_10;
+
+for(let i = arr_10.indexOf(0);i<=arr_10.lastIndexOf(0); i++){
+    sum_10 += arr_10[i];
+}
+console.log(sum_10);
+
 for (let e = 0; e < arr_7.length; e++) {
     sum += arr_7[e];
 }
@@ -105,3 +116,4 @@ for (let e = 0; e < arr_7.length; e++) {
 alert(sum);
 
 document.write("Задание 7 ответ:" + sum);
+
