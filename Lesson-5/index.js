@@ -78,13 +78,14 @@ function ex_6(arr_6) {
 document.write("Задание 6 ответ: ", ex_6(arr_6) + "</br>");
 
 // exercise 9 
-let j = 10;
+let j = 16;
 
 function fib(j) {
     let arr = [0, 1];
-    for (let i = 2; i < j  + 1; i++) {
-        arr.push(arr[i - 2] + arr[i - 1])
+    for (let i = 2; i < j + 1; i++) {
+        arr[i] = (arr[i - 2] + arr[i - 1]);
     }
-    return arr[j]
+    console.log(arr);
 }
+fib(j);
 document.write("Задание 9 числа Фибоначи ответ: ", fib(j));

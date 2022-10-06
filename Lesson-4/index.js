@@ -100,11 +100,11 @@ while (check) {
 
 // exercise 10
 
-let arr_10 = [48,9,0,4,21,2,1,0,8,84,76,8,4,13,2];
+let arr_10 = [48, 9, 0, 4, 21, 2, 1, 0, 8, 84, 76, 8, 4, 13, 2];
 
 let sum_10;
 
-for(let i = arr_10.indexOf(0);i<=arr_10.lastIndexOf(0); i++){
+for (let i = arr_10.indexOf(0); i <= arr_10.lastIndexOf(0); i++) {
     sum_10 += arr_10[i];
 }
 console.log(sum_10);
