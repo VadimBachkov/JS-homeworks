@@ -16,8 +16,8 @@ btnBalance.addEventListener("click", () => {
 
     if (inputBgt.value > 0) {
 
-        bgtValue.innerText = Number(inputBgt.value) + ", $";
-        balance.innerText = Number(inputBgt.value) + ", $";
+        bgtValue.innerText = +Number(inputBgt.value) + Number(bgtValue.textContent);
+        balance.innerText = +Number(inputBgt.value) + Number(balance.textContent);
 
     } else {
         alert("Add budget value.")
@@ -29,14 +29,13 @@ addBtn.addEventListener("click", () => {
 
     newElement(purchasePrice.value);
     newBalance(purchasePrice.value);
-    lowBalance(balance.value,purchasePrice.value);
+    lowBalance(balance);
     purchasePrice.value = "";
-    balance.value = "";
 
     //JSON ADD
     newExp = {
         name: expTxt.value,
-        price: expValue.value
+        price: expPrice
     }
 
     expensesList.push(newExp);
@@ -47,14 +46,16 @@ addBtn.addEventListener("click", () => {
 
 })
 
+
 expList.addEventListener("click", (event) => {
     const purchase = document.querySelector(".expense-value");
     if (event.target.classList.contains("fa-xmark")) {
         event.target.parentElement.parentElement.remove();
     }
     purchase.style.display = "none";
-    balance.innerHTML = inputBgt.value + ", $ ";
+    balance.innerText = bgtValue.textContent;
 })
+
 
 function newElement(purchasePrice) {
     const purchase = document.querySelector(".expense-value");
@@ -71,19 +72,19 @@ function newElement(purchasePrice) {
                 </div>
         `
         expList.appendChild(newItem);
-
-        purchase.innerHTML += purchasePrice + ", $";
+        expPrice = expValue.value;
+        purchase.innerHTML = + purchasePrice + Number(purchase.textContent);
     } else {
         alert("Please, add information.");
     }
 }
 
 function newBalance(purchasePrice) {
-    balance.innerText = (inputBgt.value - purchasePrice + ", $");
+    balance.innerText = Number(balance.textContent) - purchasePrice;
 }
 
-function lowBalance(balance,purchasePrice) {
-    if (balance < purchasePrice && balance =="") {
+function lowBalance(balance) {
+    if (Number(balance.textContent) < 0) {
         alert("You need more money.")
     }
 }
