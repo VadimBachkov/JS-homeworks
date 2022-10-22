@@ -52,8 +52,9 @@ expList.addEventListener("click", (event) => {
     if (event.target.classList.contains("fa-xmark")) {
         event.target.parentElement.parentElement.remove();
     }
-    purchase.style.display = "none";
+    // purchase.style.display = "none";
     balance.innerText = bgtValue.textContent;
+    purchase.innerHTML = + Number(purchase.textContent) - Number(expPrice);
 })
 
 
