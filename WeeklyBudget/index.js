@@ -27,7 +27,7 @@ btnBalance.addEventListener("click", () => {
 
 addBtn.addEventListener("click", () => {
 
-    newElement(purchasePrice.value);
+    newElement(purchasePrice.value,expTxt.value);
     newBalance(purchasePrice.value);
     lowBalance(balance);
     purchasePrice.value = "";
@@ -58,15 +58,15 @@ expList.addEventListener("click", (event) => {
 })
 
 
-function newElement(purchasePrice) {
+function newElement(purchasePrice,expTxt) {
     const purchase = document.querySelector(".expense-value");
 
-    if (purchasePrice.value != 0) {
+    if (purchasePrice!= 0 && expTxt !="") {
         let newItem = document.createElement("div");
         newItem.classList.add("expense-list");
         newItem.innerHTML = `
                 <div class="item completed">
-                <span>${"Exp: " + expTxt.value + ","}</span>
+                <span>${"Exp: " + expTxt + ","}</span>
                 <span>${expValue.value + " $"}</span>
                 <div class="item-btn">
                     <i class="fa-solid fa-xmark"></i>
